@@ -1,0 +1,42 @@
+{% extends './base.html' %}
+
+{% block body %}
+<head>
+    <style>           
+      .pass-list {
+        width:60%;
+        table-layout:fixed;
+        margin: auto;
+      } 
+  
+      .h3 {
+        text-align: center;
+      }
+    </style>
+
+<h3 class="h3">Ранее созданные пароли:</h3>
+  <div class='container text-center pass-list'>
+    
+    {% if passwords_list %} 
+    {% for item in passwords_list %}
+    <table class="table table-striped pass-list">
+      <thead><tr>
+        <td>Пароль:</td>
+        <td>Создан:</td>
+      </tr>
+    </thead>
+    
+      <tr>
+        <td>{{item.password}}</td>
+        <td>{{item.created_at}}</td>
+      </tr>
+    
+      
+    </table>
+    
+      {% endfor %}
+    {% else %}
+      <h4>В базе нет паролей</h4>
+    {% endif %}
+  </div>
+  {% endblock body %}
