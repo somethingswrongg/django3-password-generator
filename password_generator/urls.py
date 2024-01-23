@@ -1,3 +1,4 @@
+# noinspection PyInterpreter
 """
 URL configuration for password_generator project.
 
@@ -19,9 +20,13 @@ Including another URLconf
 from django.urls import path
 from generator import views
 
+
 urlpatterns = [
     path('', views.home, name='home'),
-    path('password', views.password, name='password'),
-    path('about', views.about, name='about'),
+    path('password/', views.password, name='password'),
+    path('about/', views.about, name='about'),
+    path('passlist/', views.pass_list, name='passlist'),
+    
+
 
 ]

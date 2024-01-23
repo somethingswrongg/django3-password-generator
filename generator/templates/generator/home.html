@@ -1,7 +1,13 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+{% extends './base.html' %}
 
+{% block title %}
+Домашняя страница
+{% endblock title %}
+
+
+{% block body %}
 <div class='container text-center'>
-<h1>Password Generator</h1>
+<h1>Генератор пароля</h1>
 
 <form action="{% url 'password' %}">
     <select name="lenght">
@@ -14,15 +20,17 @@
         <option value="12" selected="selected">12</option>
         <option value="13">13</option>
         <option value="14">14</option>
-    </select> Lenght
+    </select> Длина
     <br>
-    <input type="checkbox" name="uppercase"> Uppercase
+    <input type="checkbox" name="uppercase"> Верхний регистр
     <br>
-    <input type="checkbox" name="numbers"> Numbers
+    <input type="checkbox" name="numbers"> Числа
     <br>
-    <input type="checkbox" name="special"> Special characters
+    <input type="checkbox" name="special"> Специальные символы
     <br>
-    <input type="submit" value="Generate Password" class="btn btn btn-outline-secondary">
+    <input type="submit" value="Получить пароль" class="btn btn btn-outline-secondary">
 </form>
-    <a href="{% url 'about' %}" class="btn btn btn-outline-secondary">About</a>
+    <a href="{% url 'about' %}" class="btn btn btn-outline-secondary">О проекте</a>
 </div>
+{% endblock body %}
+
